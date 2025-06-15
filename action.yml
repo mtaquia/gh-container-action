@@ -8,11 +8,17 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'World'
+  what-country:
+    description: 'what country you are'
+    required: true
 outputs:
   time: # id of output
     description: 'The time we greeted you'
+  runner:
+    description: 'runner id'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.who-to-greet }}
+    - ${{ inputs.what-country }}
